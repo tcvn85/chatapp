@@ -45,6 +45,8 @@ const BoxInput = () => {
 
       localStorage.setItem(CHAT_HISTORY, JSON.stringify(appChatData))
 
+      inputRef.current.value = '';
+
       setLoading(false);
       
     } catch(error) {
