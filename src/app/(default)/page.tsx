@@ -1,5 +1,5 @@
-import ShowChat from '@/component/showChat'
-import BoxInput from '@/component/boxInput'
+import ShowChat from '@/components/showChat'
+import BoxInput from '@/components/boxInput'
 import ChatProvider from '@/context/ChatContext'
 import type { Metadata } from 'next'
 

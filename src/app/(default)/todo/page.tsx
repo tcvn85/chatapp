@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import getQueryClient from '@/utils/getQueryClient'
-import Hydrate from '@/component/hydrateClient'
+import Hydrate from '@/components/hydrateClient'
 import { dehydrate } from '@tanstack/react-query'
 import Todo from './todo'
 import type { Metadata } from 'next'

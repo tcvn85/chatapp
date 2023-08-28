@@ -28,11 +28,13 @@ export default function ChatProvider({
   const [chatItems, setChatItems] = useState<IChatItem[]>([])
 
   useEffect(() => {
-    const chatHisttory = localStorage.getItem(CHAT_HISTORY)
-    if (chatHisttory) {
-      setChatItems(JSON.parse(chatHisttory))
+    if (typeof window !== 'undefined') {
+      const chatHisttory = localStorage.getItem(CHAT_HISTORY)
+      if (chatHisttory) {
+        setChatItems(JSON.parse(chatHisttory))
+      }
     }
-  }, [setChatItems])
+  }, [])
 
   return (
     <ChatContext.Provider value={{ chatItems, setChatItems }}>
