@@ -1,19 +1,16 @@
 "use client";
 
 import { useContext, useRef, useState } from "react"
-import { IChatItem } from "../types/dataType";
-import AppContext from "../context/ChatContext";
-import openai from '../libs/openAI'
-import { CHAT_HISTORY } from "../libs/constant";
-
-
+import { IChatItem } from "@/types/dataType";
+import {ChatContext} from "@/context/ChatContext";
+import openai from '@/libs/openAI'
+import { CHAT_HISTORY } from "@/libs/constant";
 
 const BoxInput = () => {
 
-  const appContext = useContext(AppContext)
+  const appContext = useContext(ChatContext)
   const inputRef = useRef<any>(null)
   const [loading, setLoading] = useState(false);
-
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     try {
@@ -54,7 +51,6 @@ const BoxInput = () => {
       setLoading(false);
     }
   }
-
 
   return (
     <form onSubmit={handleSubmit}>

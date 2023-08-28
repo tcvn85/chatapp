@@ -1,14 +1,15 @@
+'use client'
 
 import { useContext } from "react";
-import AppContext from "../context/ChatContext";
+import {ChatContext} from "@/context/ChatContext";
 
 const ShowChat = () => {
 
-  const appContext = useContext(AppContext)
+  const chatContext = useContext(ChatContext)
 
   return (
     <ul>
-      {appContext.chatItems.map((item, index) => (
+      {chatContext?.chatItems?.map((item, index) => (
         <li className="mb-2" key={index}>
           {item.me ? (
             <div className="text-left">

@@ -1,38 +1,28 @@
-"use client"
+import ShowChat from '@/component/showChat'
+import BoxInput from '@/component/boxInput'
+import ChatProvider from '@/context/ChatContext'
+import type { Metadata } from 'next'
 
-import Link from "next/link";
-import ShowChat from "./component/showChat";
-import BoxInput from "./component/boxInput";
-import { useState, useEffect} from "react";
-import {IChatItem} from "./types/dataType";
-import AppContext from "./context/ChatContext";
-import { CHAT_HISTORY } from "./libs/constant";
+export const metadata: Metadata = {
+  title: 'Chat GPT App',
+  description: 'Chat GPT App',
+}
 
-export default function Home() {
-
-  const [chatItems, setChatItems] = useState<IChatItem[]>([]);
-
-  useEffect(() => {
-    const chatHisttory = localStorage.getItem(CHAT_HISTORY);
-    if (chatHisttory) {
-      setChatItems(JSON.parse(chatHisttory))
-    }
-  }, [])
-
+export default function Page() {
   return (
-    <AppContext.Provider value={{chatItems, setChatItems}}>
+    <ChatProvider>
       <main className="p-10">
         <div className="grid grid-cols-5 gap-10">
           <div className="col-span-2">
             <BoxInput />
           </div>
           <div className="col-span-3">
-            <div className="border p-5 rounded">
-              <ShowChat  />
+            <div className="rounded border p-5">
+              <ShowChat />
             </div>
           </div>
         </div>
       </main>
-    </AppContext.Provider>
+    </ChatProvider>
   )
 }
