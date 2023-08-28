@@ -4,6 +4,8 @@ import Hydrate from '@/component/hydrateClient'
 import { dehydrate } from '@tanstack/react-query'
 import Todo from './todo'
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import variables from '@/styles/_variables.module.scss'
 
 async function getTodo() {
   const res = await fetch('https://jsonplaceholder.typicode.com/todos')
@@ -27,9 +29,19 @@ export default async function Page() {
   const data = await getTodo()
 
   return (
-    <div className="grid grid-cols-3 gap-10">
+    <div
+      className="grid grid-cols-3 gap-10"
+      style={{ color: variables.primaryColor }}
+    >
       <div className="col1">
         <h2 className="mb-5 border-b">Next loading data</h2>
+        <Image
+          src="https://images.unsplash.com/photo-1693057891644-3765385db36c"
+          alt="Picture of the author"
+          className="mb-5 w-full"
+          width={400}
+          height={200}
+        />
 
         {data?.map((todo: any) => (
           <div key={todo.id}>
@@ -52,6 +64,15 @@ export default async function Page() {
       </div>
       <div className="col2">
         <h2 className="mb-5 border-b">Hydrate</h2>
+
+        <Image
+          alt="Mountains"
+          src="/assets/demo-img.avif"
+          quality={100}
+          width={400}
+          height={200}
+          className="mb-5 w-full"
+        />
         <Hydrate state={dehydratedState}>
           <Todo />
         </Hydrate>
