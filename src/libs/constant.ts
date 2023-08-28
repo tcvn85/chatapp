@@ -1,1 +1,1 @@
-export const CHAT_HISTORY = 'chatHistory';
+export const CHAT_HISTORY = 'chatHistory'

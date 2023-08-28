@@ -1,6 +1,5 @@
 export type IChatItem = {
-  msg: string;
-  me: boolean;
-  createDate: number;
+  msg: string
+  me: boolean
+  createDate: number
 }
-

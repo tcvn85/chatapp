@@ -1,10 +1,9 @@
 'use client'
 
-import { useContext } from "react";
-import {ChatContext} from "@/context/ChatContext";
+import { useContext } from 'react'
+import { ChatContext } from '@/context/ChatContext'
 
 const ShowChat = () => {
-
   const chatContext = useContext(ChatContext)
 
   return (
