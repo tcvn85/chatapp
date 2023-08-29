@@ -25,6 +25,9 @@ export default function Header() {
               <Link href="/blog">Blog</Link>
             </li>
             <li>
+              <Link href="/server-action">Server Action</Link>
+            </li>
+            <li>
               <Link href="/login">Login</Link>
             </li>
           </ul>
