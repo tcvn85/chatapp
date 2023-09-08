@@ -3,5 +3,5 @@ export default function EmptyLayout({
 }: {
   children: React.ReactNode
 }) {
-  return <main>{children}</main>
+  return <main className="p-5">{children}</main>
 }

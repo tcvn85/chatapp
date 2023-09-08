@@ -3,10 +3,10 @@ import Link from 'next/link'
 export default function Page() {
   return (
     <div>
-      <div className="text-center">
+      <div className="p-5 text-center">
         <Link href="/">Logo</Link>
       </div>
-      <h1>Newsletter</h1>
+      <h1 className="mb-5 text-center text-xl">Newsletter</h1>
       <div className="mb-6">
         <label
           htmlFor="email"

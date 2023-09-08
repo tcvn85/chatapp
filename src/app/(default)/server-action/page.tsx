@@ -8,7 +8,7 @@ export default function Page() {
     'use server'
     const todo = data.get('todo') as string
 
-    await new Promise((resolve) => setTimeout(resolve, 3000))
+    await new Promise((resolve) => setTimeout(resolve, 2000))
 
     todos.push(todo)
     revalidatePath('/')
