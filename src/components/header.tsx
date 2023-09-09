@@ -5,6 +5,8 @@ import { signOut, useSession } from 'next-auth/react'
 export default function Header() {
   const { data: session } = useSession()
 
+  console.log(session)
+
   return (
     <header className="p-5">
       <div className="navbar rounded-lg">
@@ -44,7 +46,13 @@ export default function Header() {
                     tabIndex={1}
                     className="btn btn-ghost flex cursor-pointer px-0"
                   >
-                    <img src={session.user?.image ?? ''} alt="" />
+                    <img
+                      src={
+                        session.user?.image ??
+                        'https://placehold.co/50/EEE/31343C'
+                      }
+                      alt=""
+                    />
                   </label>
                   <div className="dropdown-menu dropdown-menu-bottom-left">
                     <Link
