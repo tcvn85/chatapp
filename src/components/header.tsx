@@ -1,11 +1,9 @@
 'use client'
 import Link from 'next/link'
-import { signOut, useSession } from 'next-auth/react'
+import { signOut, signIn, useSession } from 'next-auth/react'
 
 export default function Header() {
   const { data: session } = useSession()
-
-  console.log(session)
 
   return (
     <header className="p-5">
@@ -71,8 +69,7 @@ export default function Header() {
                     </Link>
                     <Link
                       tabIndex={-1}
-                      href="#"
-                      onClick={() => signOut()}
+                      href="/auth/signout"
                       className="dropdown-item text-sm"
                     >
                       Logout
@@ -82,7 +79,9 @@ export default function Header() {
               </div>
             </div>
           ) : (
-            <Link href="/login">Login</Link>
+            <Link onClick={() => signIn()} href="#">
+              Login
+            </Link>
           )}
         </div>
       </div>
